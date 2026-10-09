@@ -1,0 +1,9 @@
+target
+
+*.bin
+*.elf
+*.hex
+*.uf2
+*.zip
+
+.DS_Store

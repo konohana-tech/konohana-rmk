@@ -1,0 +1,59 @@
+[keyboard]
+name = "konohana-rmk"
+product_name = "konohana-rmk"
+vendor_id = 0x4c4b
+product_id = 0x4643
+manufacturer = "RMK"
+chip = "nrf52840"
+
+[matrix]
+# Row and col pins are mandatory
+row_pins = ["P1_15", "P1_14"]
+col_pins = ["P0_02", "P0_03", "P0_28"]
+# RMK uses col2row as the default matrix diode direction, if you want to use a row2col matrix, add `row2col = true`
+# row2col = true
+
+[layout]
+rows = 2
+cols = 3
+map = """
+(0,0)  (0,1)  (0,2)
+(1,0)  (1,1)  (1,2)
+"""
+
+[keymap]
+layers = 2
+
+[[keymap.layer]] # layer 0
+keys = """
+A B D
+MO(1) Backspace Enter
+"""
+
+[[keymap.layer]] # layer 1
+keys = """
+User0 User1 Z
+_ _ User6
+"""
+
+
+
+[ble]
+enabled = true
+# vddh has an internal voltage divider
+# battery_adc_pin = "vddh"
+# Or
+# battery_adc_pin = "P0_04"
+# adc_divider_measured = 2000
+# adc_divider_total = 2806
+
+# charge_state.pin = "P0_25"
+# charge_state.low_active = false
+# charge_led.pin = "P0_29"
+# charge_led.low_active = false
+
+[storage]
+clear_layout = true
+
+[host]
+unlock_keys = [ [ 0, 0 ], [ 0, 1 ], [ 0, 2 ] ]
